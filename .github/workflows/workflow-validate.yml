@@ -34,7 +34,7 @@ jobs:
       
       - name: Read file and generate Base64
         run: 
-          base64_content=$(cat /config.yaml | base64)
+          base64_content=$(cat ./config.yaml | base64)
           echo "$base64_content" > base64_output.txt
       
       - name: Display Base64 output
