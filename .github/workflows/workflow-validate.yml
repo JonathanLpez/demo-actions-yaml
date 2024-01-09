@@ -46,7 +46,10 @@ jobs:
       - name: Convertir a base 64
         run: 
           cat config.yaml | base64 > archivo_base64.txt
-          cat archivo_base64.txt
+      
+      - name: Mostrar base 64
+        run: cat archivo_base64.txt
+      
           
         
 
