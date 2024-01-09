@@ -32,19 +32,19 @@ jobs:
           files: "./config.yaml"
           comment: "true"
       
-      - name: Read file and generate Base64
-        run: 
-          base64_content=$(cat ./config.yaml | base64)
-          echo "$base64_content" > base64_output.txt
-      
-      - name: Display Base64 output
-        run: cat base64_output.txt
-      
-      - name: Debug - View content of base64_output.txt
-        run: |
-          echo "Content of base64_output.txt:"
-          cat base64_output.txt
+      - name: Install oc
+        uses: redhat-actions/oc-installer@v1
+        with: 
+          oc_version: '4.6'
+          openshift_server_url: https://64.23.160.96:6443
+          openshift_username: kubeadmin 
+          openshift_password: odDkV-opFbW-C2f2E-6URuu
 
+      - name: Login to OpenShift
+        run :           
+          oc login --server=https://64.23.160.96:6443 --username=kubeadmin --password=odDkV-opFbW-C2f2E-6URuu
+
+        
 
    
 
