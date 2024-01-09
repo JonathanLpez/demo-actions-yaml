@@ -31,11 +31,18 @@ jobs:
         with:
           files: "./config.yaml"
           comment: "true"
-      - name: Instalar sshpass
-        run: sudo apt-get update && sudo apt-get install -y sshpass
-
-      - name: convertir-base-64
-        run:  ping 64.23.149.245
+      - name: Read YAML file
+        run: |
+            yaml_content=$(./config.yaml)
+            echo "$yaml_content" > converted.yaml
+          
+      - name: Convert YAML to Base64
+        run: |
+            base64_content=$(base64 converted.yaml)
+            echo "$base64_content" > base64_output.txt
+          
+      - name: Display Base64 output
+        run: cat base64_output.txt
           
 
    
