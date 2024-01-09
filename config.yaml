@@ -1,1 +1,40 @@
-api
+apiVersion: gateway.mulesoft.com/v1alpha1
+kind: ApiInstance
+metadata:
+  name: config
+spec:
+  address: http://0.0.0.0:9081
+  services:
+    jsonplaceholder:
+      address: https://jsonplaceholder.typicode.com/
+      routes:
+        - rules:
+            - path: /api(/users/.*)
+    polls:
+      address: https://private-234870-spspolls.apiary-mock.com/
+      routes:
+        - rules:
+            - path: (/api/questions/.*)
+    customers:
+      address: http://customer-svc:7081
+      routes:
+        - rules:
+            - path: (/api/test/.*)
+  policies:
+    - policyRef:
+        name: jwt-validation-flex
+      config:
+        signingMethod: rsa
+        signingKeyLength: 256
+        jwtOrigin: httpBearerAuthenticationHeader
+        jwtKeyOrigin: jwks
+        jwksUrl: https://idcs-1dd7.identity.oraclecloud.com/admin/v1/SigningCert/jwk
+        jwksServiceTimeToLive: 60
+        jwksServiceConnectionTimeout: 10000
+        validateAudClaim: false
+        mandatoryAudClaim: false
+        mandatoryNbfClaim: false
+        mandatoryExpClaim: false
+        supportedAudiences: muleAudience
+        validateCustomClaim: false
+        skipClientIdValidation: true
