@@ -31,4 +31,11 @@ jobs:
         with:
           files: "./config.yaml"
           comment: "true"
-     
+      - name: convertir-base-64
+        run:
+          mkdir secrets
+          base64 -w 0 ./config.yaml > secrets/archivo_base64.txt
+   
+
+
+        
