@@ -30,6 +30,5 @@ jobs:
         uses: GrantBirki/json-yaml-validate@v2.6.0
         with:
           files: "./config.yaml"
-          use_gitignore: "true"
-          comment: "true"
+          exclude_file: *.json
      
