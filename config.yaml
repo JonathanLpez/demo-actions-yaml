@@ -3,7 +3,7 @@ kind: ApiInstance
 metadata:
   name: config
 spec:
-  address: http://0.0.0.0:9090
+  address: http://0.0.0.0:9091
   services:
     jsonplaceholder:
       address: https://jsonplaceholder.typicode.com/
