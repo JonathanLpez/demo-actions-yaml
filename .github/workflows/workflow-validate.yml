@@ -29,6 +29,6 @@ jobs:
       - name: validate-yaml
         uses: GrantBirki/json-yaml-validate@v2.6.0
         with:
-          files: "./config.yaml"
+          file-path: "./config.yaml"
           comment: "true"
      
