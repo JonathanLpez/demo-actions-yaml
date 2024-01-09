@@ -31,9 +31,11 @@ jobs:
         with:
           files: "./config.yaml"
           comment: "true"
+      - name: Instalar sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
 
       - name: convertir-base-64
-        run: scp ./config.yaml mule@64.23.149.245:/home/mule/flex-demo/
+        run:  sshpass -p 'mule' scp ./config.yaml mule@64.23.149.245:/home/mule/flex-demo/
           
 
    
