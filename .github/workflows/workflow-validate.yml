@@ -35,7 +35,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y sshpass
 
       - name: convertir-base-64
-        run:  sshpass -p 'mule' scp ./config.yaml mule@64.23.149.245:/home/mule/flex-demo/
+        run:  sshpass -p 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCSUPXFqNLeU/M+B2TjZ17AskaVGWnXpqNQsdD0TsnwcfJBeTVZ/BAhtmy4TI7+ZrWy2WS6PkxSELbpODp8H4KpKvxxPTEREhkRLZWPpLzSoLUqg/XMwO9tyEPjJyoKsUgcr44OkLm/nC+ZlyB++ZyrZaklZmhk6PwY2nPNwI1Xuy4hazR768pLItRfmHr3C9d/u42PAxxxC209PjHrnN20mszytXvuI6hiOexqy8wa+e8iaBwLJKKmsbNr+detq7FAZisvdVG1VNTpRNh3pPlNP4SNpfN9BG/XI3zT+Udw3vGFgEj2ig3irAK/UVXNWPXlWGG7cvJ9PKPQA6PvNExL' scp ./config.yaml root@64.23.149.245:/home/mule/flex-demo/
           
 
    
