@@ -31,16 +31,16 @@ jobs:
         with:
           files: "./config.yaml"
           comment: "true"
-                    
+
       - name: Mostrar contenido del archivo
         run: cat config.yaml 
       
       - name: Convertir a base 64
         run: 
-          cat config.yaml | base64 > archivo_base64.txt
+          cat config.yaml | base64 > config.txt
       
       - name: Mostrar base 64
-        run: cat archivo_base64.txt
+        run: cat config.txt
       
           
         
