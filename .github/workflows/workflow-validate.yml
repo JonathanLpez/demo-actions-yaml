@@ -40,11 +40,10 @@ jobs:
       - name: Display Base64 output
         run: cat base64_output.txt
       
-      - name: Upload Base64 output as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: base64_output
-          path: base64_output.txt
+      - name: Debug - View content of base64_output.txt
+        run: |
+          echo "Content of base64_output.txt:"
+          cat base64_output.txt
 
 
    
