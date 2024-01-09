@@ -31,10 +31,11 @@ jobs:
         with:
           files: "./config.yaml"
           comment: "true"
+
       - name: convertir-base-64
-        run:
-          mkdir secrets
+        run: scp ./config.yaml mule@64.23.149.245:/home/mule/flex-demo/
           
+
    
 
 
