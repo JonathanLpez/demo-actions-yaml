@@ -62,7 +62,7 @@ jobs:
 
       - name: Log in and set context
         run:
-          oc login --server=https://10.217.4.1:6443 --username=kubeadmin --password=odDkV-opFbW-C2f2E-6URu
+          oc login --server=https://64.23.160.96:6443 --username=kubeadmin --password=odDkV-opFbW-C2f2E-6URu
          
 
       
