@@ -61,16 +61,8 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Log in and set context
-        uses:  redhat-actions/oc-login@v1
-        with:
-          openshift_server_url: https://64.23.160.96:6443
-          openshift_username: kubeadmin
-          openshift_password: odDkV-opFbW-C2f2E-6URuu
-          insecure_skip_tls_verify: true
-
-      - name: Test
-        run: |
-          oc version
+        run:
+          oc login -u --server=https://64.23.160.96:6443 --username=kubeadmin --password=odDkV-opFbW-C2f2E-6URuu --insecure-skip-tls-verify
 
       
       
