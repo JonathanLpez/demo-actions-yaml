@@ -55,10 +55,9 @@ jobs:
       - name: Login cli openshift
         uses: redhat-actions/oc-login@v1
         with:
-          
-          openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
-          openshift_username: ${{ secrets.MY_USERNAME }}
-          openshift_password: ${{ secrets.MY_USERPASSWORD }}
+          openshift_server_url: https://64.23.160.96:6443
+          openshift_username: kubeadmin
+          openshift_password: odDkV-opFbW-C2f2E-6URuu
           insecure_skip_tls_verify: true
       
       
