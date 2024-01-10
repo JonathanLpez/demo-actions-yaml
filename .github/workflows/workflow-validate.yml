@@ -62,7 +62,7 @@ jobs:
 
       - name: Log in and set context
         run:
-          oc login -u kubeadmin --server=https://64.23.160.96:6443  --password=odDkV-opFbW-C2f2E-6URu
+          oc login -u kubeadmin --server=https://64.23.160.96:6443  --password=odDkV-opFbW-C2f2E-6URu --insecure-skip-tls-verify=true
           
       - name: test 
         run:
