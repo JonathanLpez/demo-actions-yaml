@@ -61,7 +61,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Log in and set context
-        uses: ./
+        uses:  redhat-actions/oc-login@v1
         with:
           openshift_server_url: https://64.23.160.96:6443
           openshift_username: kubeadmin
