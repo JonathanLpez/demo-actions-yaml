@@ -25,6 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+        env:
+        # These can be stored in secrets, if desired.
+          OPENSHIFT_USER: my-username
+          OPENSHIFT_NAMESPACE: my-namespace
+
       # Runs a set of commands using the runners shell
       - name: Validar YAML
         uses: GrantBirki/json-yaml-validate@v2.6.0
@@ -50,12 +55,13 @@ jobs:
       - name: Login cli openshift
         uses: redhat-actions/oc-login@v1
         with:
-          insecure_skip_tls_verify: true
+          
           openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
+          openshift_username: ${{ secrets.MY_USERNAME }}
+          openshift_password: ${{ secrets.MY_USERPASSWORD }}
+          insecure_skip_tls_verify: true
       
-      - name: Login
-        run: oc login --server=https://64.23.160.96:6443 --username=kubeadmin --password=odDkV-opFbW-C2f2E-6URuu --insecure-skip-tls-verify
-
+      
       
           
         
